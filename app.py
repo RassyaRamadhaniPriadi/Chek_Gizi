@@ -27,6 +27,12 @@ app = Flask(__name__,
             static_folder=BASE_DIR)
 CORS(app) # Mengizinkan permintaan dari frontend Anda
 
+@app.route('/')
+def serve_index():
+    logging.info("Serving index.html from / route")
+    return send_from_directory(app.template_folder, 'index.html')
+
+
 # --- KONFIGURASI GEMINI API KEY ---
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
