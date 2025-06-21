@@ -127,13 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
         showLoading(); // Tampilkan spinner
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/check_gizi', {
+            const response = await fetch('/check_gizi', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ food: foodName, drink: drinkName, age: userAge })
             });
+
 
             const data = await response.json();
             displayResults(data);
