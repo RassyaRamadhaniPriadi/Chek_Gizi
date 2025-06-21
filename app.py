@@ -178,4 +178,4 @@ def serve_static(filename):
 if __name__ == '__main__':
     # Untuk menjalankan aplikasi Flask secara sinkron, Anda bisa kembali menggunakan app.run()
     # Pastikan debug=False untuk stabilitas.
-    app.run(debug=False, host="0.0.0.0", PORT=int(os.environ.get("PORT", 5000)))
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
