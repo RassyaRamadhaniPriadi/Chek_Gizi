@@ -23,7 +23,7 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Konfigurasi Flask agar tahu di mana mencari file statis dan template
 app = Flask(__name__,
-            template_folder=os.path.join(BASE_DIR, 'html'),
+            template_folder=os.path.join(BASE_DIR, 'templates'),
             static_folder=BASE_DIR)
 CORS(app) # Mengizinkan permintaan dari frontend Anda
 
