@@ -1,0 +1,252 @@
+/* General Styling */
+:root {
+    --primary-color: #4CAF50; /* Hijau Kesehatan */
+    --secondary-color: #81C784; /* Hijau Muda */
+    --accent-color: #64B5F6; /* Biru Langit untuk aksen */
+    --text-dark: #333;
+    --text-light: #f9f9f9;
+    --bg-light: #f9f9f9;
+    --bg-dark: #e0e0e0;
+    --border-color: #ccc;
+    --error-color: #e57373; /* Merah untuk error */
+    --success-color: #66bb6a; /* Hijau untuk sukses */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 0.5em 0 0;
+    font-size: 1.1em;
+}
+
+/* Icons (using Unicode for simplicity, replace with Font Awesome if desired) */
+.icon-heartbeat::before { content: "\2665"; margin-right: 5px; color: #ffeb3b; } /* Hati */
+.icon-apple::before { content: "\1F34E"; margin-left: 5px; } /* Apel merah */
+.icon-love::before { content: "\2764\uFE0F"; margin-right: 3px; color: #ffeb3b; } /* Hati merah */
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid var(--bg-dark);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Input Section */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="number"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.2);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Loading Section */
+.loading-section {
+    text-align: center;
+    padding: 40px 20px;
+    display: none; /* Hidden by default */
+    border: 2px dashed var(--accent-color);
+    border-radius: 8px;
+    background-color: #e3f2fd; /* Light blue background */
+    color: var(--accent-color);
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Results Section */
+.results-section {
+    min-height: 150px; /* Agar tidak terlalu kosong saat loading */
+}
+
+.placeholder-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+    background-color: var(--bg-dark);
+    border-radius: 5px;
+}
+
+.nutrition-result {
+    background-color: #e8f5e9; /* Sangat terang hijau untuk hasil */
+    border: 1px solid var(--success-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nutrition-result h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.nutrition-result .nutrients p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.nutrition-result .nutrients strong {
+    color: var(--text-dark);
+}
+
+.nutrition-result .assessment {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--secondary-color);
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.error-message {
+    background-color: #ffebee; /* Merah sangat terang untuk error */
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--text-dark);
+    color: var(--bg-light);
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    main {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    .loading-section, .results-section, .input-section {
+        padding: 15px;
+    }
+}
