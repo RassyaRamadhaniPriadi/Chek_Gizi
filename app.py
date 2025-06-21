@@ -32,11 +32,8 @@ model = genai.GenerativeModel('gemini-1.5-flash')
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # --- Inisialisasi Flask ---
-app = Flask(
-    __name__,
-    template_folder=os.path.join(BASE_DIR, 'html'),
-    static_folder=BASE_DIR
-)
+app = Flask(__name__, template_folder="html", static_folder="static")
+
 CORS(app)
 
 # ============================
